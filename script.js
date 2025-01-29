@@ -131,6 +131,8 @@ document.getElementById("qiblaButton").addEventListener("click", function () {
             let qiblaDirection = 98; // Approximate Qibla direction for Riyadh
 
             let rotation = qiblaDirection - compassDirection;
+            // Normalize rotation angle to be between 0 and 360 degrees
+            if (rotation < 0) rotation += 360;
             document.getElementById("compassImage").style.transform = `rotate(${rotation}deg)`;
             document.getElementById("qiblaDirection").textContent = `Qibla Direction: ${qiblaDirection}°`;
         });
