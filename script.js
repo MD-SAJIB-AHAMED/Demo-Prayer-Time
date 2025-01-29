@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
         updateNextPrayer(prayerTimes); // Update the next prayer countdown
     }
 
-    setInterval(checkPrayerTime, 60000); // প্রতি মিনিটে চেক করবে
+    setInterval(checkPrayerTime, 60000); // Check every minute for Azan
 
     const API_URL = "https://api.aladhan.com/v1/timingsByCity?city=Riyadh&country=Saudi Arabia&method=8";
 
@@ -93,6 +93,17 @@ function updateNextPrayer(prayerTimes) {
     const secondsRemaining = timeRemaining % 60;
 
     document.getElementById("nextPrayer").textContent = `${nextPrayer.name} at ${nextPrayerTime} (In ${minutesRemaining} min ${secondsRemaining} sec)`;
+
+    // Live countdown: Update every second
+    setInterval(() => {
+        const now = new Date();
+        const currentTime = now.getHours() * 60 + now.getMinutes();
+        const timeRemaining = nextPrayer.time - currentTime;
+        const minutesRemaining = Math.floor(timeRemaining / 60);
+        const secondsRemaining = timeRemaining % 60;
+
+        document.getElementById("nextPrayer").textContent = `${nextPrayer.name} at ${nextPrayerTime} (In ${minutesRemaining} min ${secondsRemaining} sec)`;
+    }, 1000); // Update countdown every second
 }
 
 function convertToMinutes(time) {
