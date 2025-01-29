@@ -8,10 +8,28 @@
     <script defer src="script.js"></script>
 </head>
 <body>
+<audio id="azanAudio">
+    <source src="audio/maghrib.mp3" type="audio/mpeg">
+</audio>
+<audio id="azanAudio">
+    <source src="audio/isha.mp3" type="audio/mpeg">
+</audio>
+<audio id="azanAudio">
+    <source src="audio/fajr.mp3" type="audio/mpeg">
+</audio>
+<audio id="azanAudio">
+    <source src="audio/dhuhr.mp3" type="audio/mpeg">
+</audio>
+<audio id="azanAudio">
+    <source src="audio/asr.mp3" type="audio/mpeg">
+</audio>
+
     <div class="container">
         <h1>Islamic Prayer Times</h1>
 
+        <p id="gregorianDate">Loading Date...</p>
         <p id="hijriDate">Loading Hijri Date...</p>
+        <p id="location">Fetching Location...</p>
 
         <div class="animation">
             <img src="prayer_animation.gif" alt="Prayer Animation">
@@ -28,8 +46,9 @@
         </div>
 
         <button id="qiblaButton">Find Qibla</button>
-        <div id="qiblaContainer">
-            <iframe id="qiblaMap" width="300" height="200"></iframe>
+        <div id="qiblaCompassContainer">
+            <img id="compassImage" src="compass.png" alt="Qibla Compass">
+            <p id="qiblaDirection">Qibla Direction: --°</p>
         </div>
     </div>
 </body>

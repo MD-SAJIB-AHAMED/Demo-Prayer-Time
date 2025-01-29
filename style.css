@@ -7,7 +7,7 @@ body {
 }
 
 .container {
-    max-width: 400px;
+    max-width: 90%;
     margin: auto;
     padding: 20px;
     border-radius: 10px;
@@ -31,6 +31,9 @@ h1 {
 }
 
 .prayer-times {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
     margin-top: 20px;
 }
 
@@ -38,7 +41,6 @@ h1 {
     font-size: 18px;
     background: #333;
     padding: 10px;
-    margin: 5px 0;
     border-radius: 5px;
 }
 
@@ -49,9 +51,32 @@ h1 {
     color: black;
     border: none;
     cursor: pointer;
+    width: 100%;
 }
 
-#qiblaContainer {
+#qiblaCompassContainer {
     margin-top: 10px;
     display: none;
+    position: relative;
+}
+
+#compassImage {
+    width: 100px;
+    transition: transform 0.5s ease-in-out;
+}
+
+#qiblaDirection {
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+@media (min-width: 600px) {
+    .container {
+        max-width: 400px;
+    }
+
+    #compassImage {
+        width: 150px;
+    }
 }
