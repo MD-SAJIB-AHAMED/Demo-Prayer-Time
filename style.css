@@ -1,0 +1,57 @@
+body {
+    background-color: #121212;
+    color: white;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 20px;
+}
+
+.container {
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #1e1e1e;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+}
+
+.animation img {
+    width: 100px;
+    animation: fadeIn 2s ease-in-out infinite alternate;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0.6; }
+    to { opacity: 1; }
+}
+
+h1 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.prayer-times {
+    margin-top: 20px;
+}
+
+.prayer {
+    font-size: 18px;
+    background: #333;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+}
+
+#qiblaButton {
+    margin-top: 10px;
+    padding: 10px;
+    background: #ffcc00;
+    color: black;
+    border: none;
+    cursor: pointer;
+}
+
+#qiblaContainer {
+    margin-top: 10px;
+    display: none;
+}
